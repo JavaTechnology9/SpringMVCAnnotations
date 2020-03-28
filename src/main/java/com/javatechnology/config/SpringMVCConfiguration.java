@@ -89,13 +89,14 @@ public class SpringMVCConfiguration {// <beans>
 		JavaMailSenderImpl sender=new JavaMailSenderImpl(); 
 		sender.setHost("smtp.gmail.com");
 		sender.setPort(587);
-		sender.setUsername("sureshyadav99636@gmail.com");
+		sender.setUsername("test@gmail.com");
 		sender.setPassword("password");
 		Properties proerties=new Properties();
 		proerties.put("mail.smtp.auth", true);
 		proerties.put("mail.transport.protocol", "smtp");
 		proerties.put("mail.degub", true);
 		proerties.put("mail.smtp.starttls.enable", true);
+		proerties.put("mail.smtp.ssl.trust", "smtp.gmail.com");
 		sender.setJavaMailProperties(proerties);
 		return sender;
 		
