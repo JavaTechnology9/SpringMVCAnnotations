@@ -1,11 +1,27 @@
 package com.javatechnology.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="spring_employee")
 public class Employee {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
+	@Column
 	private String name;
+	@Column
 	private String designation;
+	@Column
 	private String email;
+	@Column
 	private String phonenumber;
+	@Column
 	private String address;
 	public long getId() {
 		return id;

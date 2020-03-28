@@ -1,8 +1,21 @@
 package com.javatechnology.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="spring_login")
 public class Login {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
+	@Column
 	private String username;
+	@Column
 	private String password;
 	public long getId() {
 		return id;

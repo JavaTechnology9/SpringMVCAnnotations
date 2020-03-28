@@ -1,25 +1,38 @@
 package com.javatechnology.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import com.javatechnology.config.ValidEmail;
-
+@Entity
+@Table
 public class Registration {
 	/*@AssertFalse
 	@DecimalMax
 	@Min
 	@@Max*/
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	@NotEmpty(message="first name is required")
+	@Column
 	private String firstname;
 	@NotEmpty(message="lastName is required")
+	@Column
 	private String lastname;
-	/*@Email(message="email is required")*/
-	@ValidEmail
+	@Email(message="email is required")
+	//@ValidEmail
+	@Column
 	private String email;
+	@Column
 	private String phonenumber;
 	public long getId() {
 		return id;
