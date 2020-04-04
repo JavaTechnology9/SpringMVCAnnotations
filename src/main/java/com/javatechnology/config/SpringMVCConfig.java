@@ -7,7 +7,7 @@ public class SpringMVCConfig extends AbstractAnnotationConfigDispatcherServletIn
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
 		// TODO Auto-generated method stub
-		return new Class<?> [] {SpringMVCRootConfig.class};
+		return new Class<?> [] {SecurityConfig.class};
 	}
 
 	@Override
